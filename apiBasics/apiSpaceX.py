@@ -30,16 +30,19 @@ def main():
     for core in listOfCores:
         # TODO: utilize Python core to interpret/format API provided time
         launchDateTime = (core['original_launch'])
-        print(core['core_serial'], ' - ',  launchDateTime, end='\n')
+#        print(core['core_serial'], ' - ',  launchDateTime, end='\n')
 
     # fString formatting
     for core in listOfCores:
         serial = core['core_serial']
         ldt = core['original_launch']
-        print(f'SpaceX vehicle number: {serial} \n  launched on: {ldt}.', end='\n\n')
-
-    # original_launch
-
+        print(f'SpaceX vehicle number: {serial} \n  launched on: {ldt}.', end='\n')
+        
+        missions = core['missions']
+        if len(missions) > 0:
+            for mission in missions:
+                print(f'''    -- Mission: "{mission.get('flight')}" in support of: '{mission.get("name")}' ''')
+        print('\n')
 
 #    for core in listOfCores:
 #        print(core, end="\n\n")
