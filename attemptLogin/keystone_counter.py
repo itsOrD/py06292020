@@ -21,9 +21,9 @@ def main():
     print(f'''Failed logins currently total: {failedLoginCounter}''')
 
 
-    # same, but with regex
-    r_fail_count = 0
-
+    # TODO: same, but with regex
+#    r_fail_count = 0
+#    /- - - - -] Authorization failed/g
     
 
     print('''Via the mystical dark arts of regEx we can confirm there are "{r_fail_count}" failed logins''')
