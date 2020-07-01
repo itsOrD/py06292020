@@ -6,6 +6,7 @@ Description: write a 10 round 'Jeopardy Alexa'-ish game
 '''
 
 import time
+import re
 
 import requests
 
@@ -19,7 +20,7 @@ def main():
     username = input(f''' What's your name player? ''')
     print(f''' Welcome {username}. Let's get to the action ''')
 
-    time.sleep(0.5)
+    time.sleep(0.1)
 
     r = requests.get('https://jservice.io/api/random?count=3')
     rando_qs = r.json()
@@ -49,13 +50,13 @@ def main():
 
 
     # end of game
-    print(f''' \nAnd that's it for today's JEOPARDY ''')
+    print(f'''\nAnd that's it for today's JEOPARDY ''')
     p_correct_ans_cnt = f'''\033[1;35;40m {correct_ans_cnt} \033[0m'''
     print(f''' Good game {username}.  You got {p_correct_ans_cnt} point out of a possible 3... ''')
     print('\n')
     high_score_check(username, correct_ans_cnt)
     print('\n')
-    print(f''' JEOPARDY is now over. Run the file to play again with brand new questions! ''')
+    print(f''' -- JEOPARDY is now over - run the file to play again with brand new questions -- ''')
 
 
 def compare_ans(ans_input, question_data):
@@ -66,14 +67,25 @@ def compare_ans(ans_input, question_data):
 
 def high_score_check(usr, score):
     '''writes usernames & high scores to external doc'''
-    with open('jeopardyhighscores.txt') as hs:
+    with open('jeopardyhighscores.txt', 'r+') as hs:
         hs_list = hs.readlines()
         hs_len = 0
+        s_score = str(score)
 
-        if hs_list.len() < 10:
-            hs.write(score)
+        for line in hs_list:
+            hs_len += 1
 
-        print('Your score has been recorded in the high scores list!')
+        if hs_len < 3:
+            hs.write(usr + ': ' + s_score + '\n')
+            print('Your score has been recorded in the high scores list!')
+            return
+
+        if hs_len >= 3:
+            for line in hs_list:
+
+                this_lines_score = line.split("(?<=^\\w+): ")[-1][-1]
+
+                print('this_lines_score', this_lines_score)
 
 
 if __name__ == "__main__":
