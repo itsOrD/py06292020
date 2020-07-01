@@ -1,0 +1,20 @@
+{"status":"success","country":"France","countryCode":"FR","region":"IDF","regionName":"Île-de-France","city":"Paris","zip":"75000","lat":48.8566,"lon":2.35222,"timezone":"Europe/Paris","isp":"France Telecom Orange","org":"","as":"AS3215 Orange S.A.","query":"2.2.0.0"}
+
+{"status":"success","country":"United States","countryCode":"US","region":"AK","regionName":"Alaska","city":"Anchorage","zip":"99501","lat":61.2316,"lon":-149.874,"timezone":"America/Anchorage","isp":"Alascom, Inc.","org":"AT\u0026T Services","as":"AS32328 Alascom, Inc.","query":"12.12.0.1"}
+
+{"status":"success","country":"United States","countryCode":"US","region":"OH","regionName":"Ohio","city":"Columbus","zip":"43218","lat":39.9829,"lon":-82.9105,"timezone":"America/New_York","isp":"DoD Network Information Center","org":"DoD Network Information Center","as":"","query":"22.22.0.2"}
+
+{"status":"success","country":"United States","countryCode":"US","region":"FL","regionName":"Florida","city":"Lake Mary","zip":"32746","lat":28.7444,"lon":-81.3599,"timezone":"America/New_York","isp":"AT\u0026T Global Network Services, LLC","org":"AT\u0026T Global Network Services, LLC","as":"AS2686 AT\u0026T Global Network Services, LLC","query":"32.32.0.3"}
+
+{"status":"success","country":"South Korea","countryCode":"KR","region":"11","regionName":"Seoul","city":"Seoul","zip":"04625","lat":37.566,"lon":126.993,"timezone":"Asia/Seoul","isp":"SK-TELECOM","org":"","as":"AS9644 SK Telecom","query":"42.42.0.4"}
+
+{"status":"success","country":"United States","countryCode":"US","region":"CA","regionName":"California","city":"San Jose","zip":"95141","lat":37.3394,"lon":-121.895,"timezone":"America/Los_Angeles","isp":"Amazon.com, Inc.","org":"AWS EC2 (us-west-1)","as":"AS16509 Amazon.com, Inc.","query":"52.52.0.5"}
+
+{"status":"success","country":"Belgium","countryCode":"BE","region":"VLG","regionName":"Flanders","city":"Machelen","zip":"1830","lat":50.9114,"lon":4.42248,"timezone":"Europe/Brussels","isp":"TESTANET","org":"Testanet","as":"","query":"62.62.0.6"}
+
+{"status":"success","country":"United States","countryCode":"US","region":"VA","regionName":"Virginia","city":"Ashburn","zip":"20147","lat":39.0107,"lon":-77.469,"timezone":"America/New_York","isp":"MCI Communications Services, Inc. d/b/a Verizon Business","org":"Verizon Communications","as":"AS701 MCI Communications Services, Inc. d/b/a Verizon Business","query":"72.72.0.7"}
+
+{"status":"success","country":"Germany","countryCode":"DE","region":"HE","regionName":"Hesse","city":"Frankfurt am Main","zip":"60313","lat":50.1109,"lon":8.68213,"timezone":"Europe/Berlin","isp":"ARCOR-IP","org":"Arcor AG","as":"AS3209 Vodafone GmbH","query":"82.82.0.8"}
+
+{"status":"success","country":"France","countryCode":"FR","region":"PAC","regionName":"Provence-Alpes-Côte d'Azur","city":"Marseille","zip":"13001","lat":43.2951,"lon":5.3861,"timezone":"Europe/Paris","isp":"SFR SA","org":"SFR User Data","as":"AS15557 SFR SA","query":"92.92.0.9"}
+
