@@ -1,0 +1,205 @@
+Lab Objective
+The objective of this lab is to practice with functions. We will create a screen formatting program that will make function programming visual, so you can see on the screen how your functions work. For this lab, we'll be learning about matplotlib. The matplotlib library can be found here: https://matplotlib.org/
+
+Procedure
+Make a new directory to work in:
+
+student@beachhead:~$ mkdir -p ~/mycode/graphing
+
+To work with graphics, we'll need the tkinter package. Install that with the apt tool.
+
+student@beachhead:~$ sudo apt install python3-tk
+
+Install matplotlib with pip. Here you need to specify the version 3.0.3 due to some issues that arise when using the newest version. IF YOU DO NOT SPECIFY THE CORRECT VERSION, YOUR CODE WILL NOT SHOW A GRAPH.
+
+student@beachhead:~$ python3 -m pip install matplotlib==3.0.3
+
+Install numpy (sounds like 'num-pie').
+
+student@beachhead:~$ python3 -m pip install numpy
+
+Create a new script.
+
+student@beachhead:~$ vim ~/mycode/graphing/graphmaker-bar.py
+
+Enter the following code into your script:
+
+
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
+def main():
+    N = 4
+    localnetMeans = (20, 35, 30, 35) #LAN length of outage (mins)
+    wanMeans = (25, 32, 34, 20) #WAN length of outage (min)
+    ind = np.arange(N)    # the x locations for the groups
+    # the width of the bars: can also be len(x) sequence
+    width = 0.35
+
+    # describe where to display p1
+    p1 = plt.bar(ind, localnetMeans, width)
+    # stack p2 on top of p1
+    p2 = plt.bar(ind, wanMeans, width, bottom=localnetMeans)
+
+    # Describe the table metadata
+    plt.ylabel("Length of Outage (mins)")
+    plt.title("2018 Network Summary")
+    plt.xticks(ind, ("Q1", "Q2", "Q3", "Q4"))
+    plt.yticks(np.arange(0, 81, 10))
+    plt.legend((p1[0], p2[0]), ("LAN", "WAN"))
+
+    # display the graph
+    # plt.show() # you can try this on a Python IDE with a GUI if you'd like
+    plt.savefig("/home/student/mycode/graphing/2018summary.png")
+    
+if __name__ == "__main__":
+    main()
+Save and exit.
+
+Run the script.
+
+student@beachhead:~$ python3 ~/mycode/graphing/graphmaker-bar.py
+
+You should produce a graph called /home/student/mycode/graphing/2018summary.png, push it to GitHub and view it! Instructions on pushing to GitHub are at the end of the lab
+
+Now let's write a script that save our graph out to the local system as a pdf!
+
+student@beachhead:~$ vim ~/mycode/graphing/graphmaker-barupdated.py
+
+Enter the following into the new script:
+
+
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+
+import matplotlib.pyplot as plt
+
+def main():
+    N = 4
+    localnetMeans = (20, 35, 30, 35) #LAN length of outage (mins)
+    wanMeans = (25, 32, 34, 20) #WAN length of outage (min)
+    ind = np.arange(N)    # the x locations for the groups
+    # the width of the bars: can also be len(x) sequence
+    width = 0.35
+
+    # describe where to display p1
+    p1 = plt.bar(ind, localnetMeans, width)
+    # stack p2 on top of p1
+    p2 = plt.bar(ind, wanMeans, width, bottom=localnetMeans)
+
+    # Describe the table metadata
+    plt.ylabel("Length of Outage (mins)")
+    plt.title("2018 Network Summary")
+    plt.xticks(ind, ("Q1", "Q2", "Q3", "Q4"))
+    plt.yticks(np.arange(0, 81, 10))
+    plt.legend((p1[0], p2[0]), ("LAN", "WAN"))
+
+    # display the graph
+    # plt.show() # you can try this on a Python IDE with a GUI if you'd like
+    plt.savefig("/home/student/mycode/graphing/2018summary.pdf")
+if __name__ == "__main__":
+    main()
+Save and exit.
+
+Run the code. This time, it will produce a pdf.
+
+student@beachhead:~$ python3 ~/mycode/graphing/graphmaker-barupdated.py
+
+Check out the pdf by pushing it to GitHub! Instructions on pushing to GitHub are at the end of the lab
+
+It really isn't practical to have our data in our program. Let's read our data in from a local file. CSV is a fairly common format, so let's just make a CSV file.
+
+student@beachhead:~$ vim ~/mycode/graphing/2018summary.csv
+
+Enter the following into the script:
+
+
+20,35,30,35
+25,32,34,20
+Save and exit.
+
+Create a new script, this one will read in our CSV data.
+
+student@beachhead:~$ vim ~/mycode/graphing/graphmaker-csvreader.py
+
+The script below uses the module CSV from the Python standard library to read in our data as a list. Enter the following into your new script:
+
+
+#!/usr/bin/python3
+
+# from python std library
+import csv
+
+# python3 -m pip install np
+import numpy as np
+# python3 -m pip install matplotlib
+import matplotlib
+matplotlib.use('Agg')
+# sudo apt install python3-tk
+import matplotlib.pyplot as plt
+
+def parsecsvdata():
+    """returns a list. [0] is LAN and [1] WAN data"""
+    summary = [] # list that will contain [(LAN), (WAN)]
+
+    # open csv data
+    with open("/home/student/mycode/graphing/2018summary.csv",\
+     "r") as downtime:
+        # parse csv data with csv.reader
+        downdata = csv.reader(downtime, delimiter=",")
+        for row in downdata:
+            rowdat = (row[0], row[1], row[2], row[3])
+            summary.append(rowdat) # add dict to list
+    return summary
+
+def main():
+    N = 4
+    ## grab our data
+    summary = parsecsvdata() # grab our data
+    localnetMeans = summary[0] # LAN data
+    wanMeans = summary[1] # WAN data
+
+    ind = np.arange(N)    # the x locations for the groups
+    # the width of the bars: can also be len(x) sequence
+    width = 0.35
+
+    # describe where to display p1
+    p1 = plt.bar(ind, localnetMeans, width)
+    # stack p2 on top of p1
+    p2 = plt.bar(ind, wanMeans, width, bottom=localnetMeans)
+
+    # Describe the table metadata
+    plt.ylabel("Length of Outage (mins)")
+    plt.title("2018 Network Summary")
+    plt.xticks(ind, ("Q1", "Q2", "Q3", "Q4"))
+    plt.yticks(np.arange(0, 81, 10))
+    plt.legend((p1[0], p2[0]), ("LAN", "WAN"))
+
+    # SAVE the graph
+    plt.savefig("/home/student/mycode/graphing/2018summaryv2.png")
+    print("Graph created.")
+
+if __name__ == "__main__":
+    main()
+Save and exit.
+
+Run the script. If it worked, it will display, Graph created. on the screen.
+
+student@beachhead:~$ python3 ~/mycode/graphing/graphmaker-csvreader.py
+
+Check out the 2018summaryv2.png by pushing your work to GitHub. Instructions on pushing to GitHub are at the end of the lab
+
+If you'd like, click over to https://matplotlib.org/gallery/index.html and explore the other graphs you might make. Each graph comes with a great example. Why not try making an Arc test or Horizontal Bar Chart?
+
+Wow. That was quite a bit of coding. If you made it through that lab, good job!
+
+If you're tracking your code in GitHub, issue the following commands:
+
+cd ~/mycode
+git add *
+git commit -m "Learning to work with the matplotlib library"
+git push origin master
