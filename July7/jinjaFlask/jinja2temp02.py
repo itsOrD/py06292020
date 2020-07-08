@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+''' itsOrD || jinja template manipulation '''
+
+from flask import Flask, render_template
+
+
+app = Flask(__name__)
+
+
+# grab the value of 'username'
+@app.route('/<username>')
+def index(username):
+    # render the jinja template "helloname.html"
+    # apply the value of username for the var name
+    return render_template('helloname.html', name = username)
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=2224)
