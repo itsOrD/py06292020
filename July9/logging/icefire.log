@@ -1,0 +1,46 @@
+INFO:07/09/2020 01:35:37 PM Scripting started
+CRITICAL:07/09/2020 01:35:37 PM global name 'icefire' is not defined
+INFO:07/09/2020 01:35:37 PM  -- Program endeded
+INFO:07/09/2020 01:39:32 PM Scripting started
+CRITICAL:07/09/2020 01:39:32 PM name 'icefire' is not defined
+INFO:07/09/2020 01:39:32 PM  -- Program endeded
+INFO:07/09/2020 01:40:17 PM Scripting started
+CRITICAL:07/09/2020 01:40:17 PM name 'arg' is not defined
+INFO:07/09/2020 01:40:17 PM  -- Program endeded
+INFO:07/09/2020 01:40:49 PM Scripting started
+CRITICAL:07/09/2020 01:40:49 PM name 'arg' is not defined
+INFO:07/09/2020 01:40:49 PM  -- Program endeded
+INFO:07/09/2020 01:41:27 PM Scripting started
+CRITICAL:07/09/2020 01:41:27 PM name 'arg' is not defined
+INFO:07/09/2020 01:41:27 PM  -- Program endeded
+INFO:07/09/2020 01:42:12 PM Scripting started
+CRITICAL:07/09/2020 01:42:12 PM name 'arg' is not defined
+INFO:07/09/2020 01:42:12 PM  -- Program endeded
+INFO:07/09/2020 01:42:46 PM Scripting started
+CRITICAL:07/09/2020 01:42:46 PM name 'arg' is not defined
+INFO:07/09/2020 01:42:46 PM  -- Program endeded
+INFO:07/09/2020 01:43:15 PM Scripting started
+CRITICAL:07/09/2020 01:43:15 PM name 'arg' is not defined
+INFO:07/09/2020 01:43:15 PM  -- Program endeded
+INFO:07/09/2020 01:43:25 PM Scripting started
+CRITICAL:07/09/2020 01:43:25 PM name 'arg' is not defined
+INFO:07/09/2020 01:43:25 PM  -- Program endeded
+INFO:07/09/2020 01:43:28 PM Scripting started
+CRITICAL:07/09/2020 01:43:28 PM name 'arg' is not defined
+INFO:07/09/2020 01:43:28 PM  -- Program endeded
+INFO:07/09/2020 01:44:14 PM Scripting started
+INFO:07/09/2020 01:44:14 PM  -- Program endeded
+INFO:07/09/2020 01:44:34 PM Scripting started
+INFO:07/09/2020 01:44:35 PM  -- Program endeded
+INFO:07/09/2020 01:45:33 PM Scripting started
+CRITICAL:07/09/2020 01:45:34 PM 'Response' object has no attribute 'code'
+INFO:07/09/2020 01:45:34 PM  -- Program endeded
+INFO:07/09/2020 01:46:08 PM Scripting started
+CRITICAL:07/09/2020 01:46:08 PM 'Response' object has no attribute 'code'
+INFO:07/09/2020 01:46:08 PM  -- Program endeded
+INFO:07/09/2020 01:46:10 PM Scripting started
+CRITICAL:07/09/2020 01:46:11 PM 'Response' object has no attribute 'code'
+INFO:07/09/2020 01:46:11 PM  -- Program endeded
+INFO:07/09/2020 01:47:13 PM Scripting started
+CRITICAL:07/09/2020 01:47:13 PM must be str, not NoneType
+INFO:07/09/2020 01:47:13 PM  -- Program endeded
